@@ -65,7 +65,7 @@ const DB = [
     category: TYPES.DRINK,
     name: "Refrigerantes",
     description: "Lata 350ml",
-    img: "http://www.postotropical.net.br/wp-content/uploads/2021/02/refrigerantes-lata-350ml-min-600x600.jpg",
+    img: "./img/coca-cola.png",
     price: "R$ 6,90",
   },
   {
