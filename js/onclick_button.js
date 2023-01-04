@@ -54,15 +54,7 @@ closeOrder.onclick = () => {
   if (address === null) return;
 
   const { MAIN, DRINK, DESSERT } = getOrder();
-  const message = `Olá, gostaria de fazer o pedido:
-  - Prato: ${MAIN.name}
-  - Bebida: ${DRINK.name}
-  - Sobremesa: ${DESSERT.name}
-  Total: ${numberToMoney(getTotalPrice())}
-  
-  Nome: ${name}
-  Endereço: ${address}
-  `;
+  const message = `Olá, gostaria de fazer o pedido:\n- Prato: ${MAIN.name}\n- Bebida: ${DRINK.name}\n- Sobremesa: ${DESSERT.name}\nTotal: ${numberToMoney(getTotalPrice())}\n\nNome: ${name}\nEndereço: ${address}`;
   const url = new URL(`https://wa.me/5564992262101?text=${encodeURIComponent(message)}`);
   window.open(url, "_blank");
   alertContainer.style.display = "none";
