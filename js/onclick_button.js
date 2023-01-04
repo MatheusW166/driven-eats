@@ -37,7 +37,7 @@ function inputText(title, reinforceTitle) {
   let text = "";
   let times = 0;
   let titleCopy = title;
-  while (!text) {
+  while (!text.trim()) {
     if (times > 0) titleCopy = reinforceTitle ?? title;
     text = prompt(titleCopy);
     if (text === null) return text; // User canceled
