@@ -1,8 +1,3 @@
-import { DB, ORDER } from "./database.js";
+import { insertContent } from "./create_content.js";
 
-function print() {
-  console.log(DB);
-  console.log(ORDER);
-}
-
-print();
+insertContent();
