@@ -1,14 +1,19 @@
+:root {
+  --horizontal-spacing: 20px;
+  --food-list-vpadding: 8px;
+}
+
 main {
-  margin: 124px 20px;
+  margin: 124px 0;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
 }
 
 main > section {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: calc(16px - var(--food-list-vpadding));
 }
 
 main > section h2 {
@@ -16,13 +21,14 @@ main > section h2 {
   line-height: 32px;
   letter-spacing: 0.018em;
   color: var(--gray-700);
+  margin: 0 var(--horizontal-spacing);
 }
 
 .food-list {
   display: flex;
   gap: 16px;
-  overflow: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
+  padding: var(--food-list-vpadding) var(--horizontal-spacing);
 }
 
 .food-list article {
@@ -79,7 +85,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 var(--horizontal-spacing);
   gap: 6px;
   box-shadow: var(--shadow-1);
   position: fixed;
