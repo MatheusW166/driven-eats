@@ -33,20 +33,36 @@ cancelOrder.onclick = () => {
   alertContainer.style.display = "none";
 }
 
+function inputText(title, reinforceTitle) {
+  let text = "";
+  let times = 0;
+  let titleCopy = title;
+  while (!text) {
+    if (times > 0) titleCopy = reinforceTitle ?? title;
+    text = prompt(titleCopy);
+    if (text === null) return text; // User canceled
+    times++;
+  }
+  return text;
+}
+
 const closeOrder = document.getElementById("confirm-order");
 closeOrder.onclick = () => {
-  const name = prompt("Qual é o seu nome?");
-  const address = prompt("Qual é o seu endereço?");
+  const name = inputText("Qual é o seu nome?", "Por favor, informe seu nome.");
+  if (name === null) return;
+  const address = inputText("Qual é o seu endereço?", "Endereço obrigatório, quer receber o pedido como doidão?");
+  if (address === null) return;
 
   const { MAIN, DRINK, DESSERT } = getOrder();
-  const message = `
-  Olá, gostaria de fazer o pedido:
-  - Prato: ${MAIN.name}
-  - Bebida: ${DRINK.name}
-  - Sobremesa: ${DESSERT.name}
-  Total: ${numberToMoney(getTotalPrice())}
+  const message = `Olá, gostaria de fazer o pedido:\n
+  - Prato: ${MAIN.name}\n
+  - Bebida: ${DRINK.name}\n
+  - Sobremesa: ${DESSERT.name}\n
+  Total: ${numberToMoney(getTotalPrice())}\n\n
+  Endereço: ${address}\n
+  Entregar para: ${name}
   `;
-  const url = new URL(`https://wa.me/5564992262101?text=${message}`);
+  const url = encodeURI(`https://wa.me/5564992262101?text=${message}`);
   window.open(url, "_blank");
   alertContainer.style.display = "none";
 };
