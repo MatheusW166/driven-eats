@@ -58,9 +58,9 @@ closeOrder.onclick = () => {
   - Prato: ${MAIN.name}\n
   - Bebida: ${DRINK.name}\n
   - Sobremesa: ${DESSERT.name}\n
-  *Total*: ${numberToMoney(getTotalPrice())}\n\n
-  *Endereço*: ${address}\n
-  *Entregar para*: ${name}
+  Total: ${numberToMoney(getTotalPrice())}\n\n
+  Nome: ${name}
+  Endereço: ${address}\n
   `;
   const url = new URL(`https://wa.me/5564992262101?text=${encodeURIComponent(message)}`);
   window.open(url, "_blank");
