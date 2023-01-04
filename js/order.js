@@ -19,3 +19,7 @@ export function updateOrder(food) {
   ORDER[food.category] = { ...food };
   return food;
 }
+
+export function getOrder() {
+  return { ...ORDER };
+}
