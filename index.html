@@ -7,58 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Driven Eats</title>
   <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/root.css">
   <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
-  <header>
-    <h1>Driven Eats</h1>
-    <p>Sua comida em 6 minutos</p>
-  </header>
+  <div id="root">
+    <header>
+      <h1>Driven Eats</h1>
+      <p>Sua comida em 6 minutos</p>
+    </header>
 
-  <main>
-    <section food-main>
-      <h2>Primeiro, seu prato</h2>
-      <div>
-        <article>
-          <img src="" alt="">
-          <h3>Nome do prato</h3>
-          <p>Descrição</p>
-          <h4>R$ 11,45</h4>
-        </article>
-      </div>
-    </section>
-    <!-- END food-main -->
-    <section food-drink>
-      <h2>Agora, sua bebida</h2>
-      <div>
-        <article>
-          <img src="" alt="">
-          <h3>Nome do prato</h3>
-          <p>Descrição</p>
-          <h4>R$ 11,45</h4>
-        </article>
-      </div>
-    </section>
-    <!-- END food-drink -->
-    <section food-dessert>
-      <h2>Por fim, sua sobremesa</h2>
-      <div>
-        <article>
-          <img src="" alt="">
-          <h3>Nome do prato</h3>
-          <p>Descrição</p>
-          <h4>R$ 11,45</h4>
-        </article>
-      </div>
-    </section>
-    <!-- END food-dessert -->
-  </main>
+    <main>
+    </main>
 
-  <footer>
-    <button>Selecione os 3 itens para fechar o pedido</button>
-  </footer>
-  <script type="module" src="./js/index.js"></script>
+    <footer>
+      <button id="finish-order" disabled>Selecione os 3 itens<br>para fechar o pedido</button>
+    </footer>
+    <script type="module" src="./js/index.js"></script>
+  </div>
 </body>
 
 </html>
