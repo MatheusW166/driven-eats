@@ -1,9 +1,4 @@
-import { TYPES, DB } from "./database.js";
-
-const titles = {};
-titles[TYPES.MAIN] = "Primeiro, seu prato";
-titles[TYPES.DRINK] = "Agora, sua bebida";
-titles[TYPES.DESSERT] = "Por fim, sua sobremesa";
+import { TYPES, getAllFoods } from "./database.js";
 
 function groupByCategory(data) {
   const groups = {};
@@ -22,11 +17,9 @@ function createFoodSection(title) {
   const h2 = document.createElement("h2");
   const div = document.createElement("div");
   div.classList.add("food-list");
-
   h2.appendChild(document.createTextNode(title));
   section.appendChild(h2);
   section.appendChild(div);
-
   return section;
 }
 
@@ -36,13 +29,11 @@ function createFoodCard(food) {
   const h3 = document.createElement("h3");
   const p = document.createElement("p");
   const h4 = document.createElement("h4");
-
-  article.setAttribute("foodId", food.foodId);
+  article.setAttribute("id", `${food.category}-${food.foodId}`);
   image.src = food.img;
   h3.appendChild(document.createTextNode(food.name));
   p.appendChild(document.createTextNode(food.description));
   h4.appendChild(document.createTextNode(food.price));
-
   article.appendChild(image);
   article.appendChild(h3);
   article.appendChild(p);
@@ -51,6 +42,11 @@ function createFoodCard(food) {
   return article;
 }
 
+const titles = {
+  [TYPES.MAIN]: "Primeiro, seu prato",
+  [TYPES.DRINK]: "Agora, sua bebida",
+  [TYPES.DESSERT]: "Por fim, sua sobremesa",
+};
 function createMainContent(db) {
   const groups = groupByCategory(db);
   const sections = [];
@@ -63,12 +59,14 @@ function createMainContent(db) {
     });
     sections.push(typeSection);
   });
-
   return sections;
 }
 
 export function insertContent() {
-  const mainSections = createMainContent(DB);
+  const mainSections = createMainContent(getAllFoods());
+  const fragment = document.createDocumentFragment();
+  mainSections.forEach((e) => fragment.appendChild(e));
+
   const main = document.getElementsByTagName("main")[0];
-  mainSections.forEach((e) => main.appendChild(e));
+  main.appendChild(fragment);
 }

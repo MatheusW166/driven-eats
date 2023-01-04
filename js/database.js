@@ -1,4 +1,19 @@
-const TYPES = {
+export function searchByFoodId(foodId) {
+  const id = parseInt(foodId);
+  const element = DB.filter((e) => e.foodId === id)[0];
+  if (element) {
+    return { ...element };
+  }
+  return element;
+}
+
+export function getAllFoods() {
+  const data = [];
+  DB.forEach((e) => data.push({ ...e }));
+  return data;
+}
+
+export const TYPES = {
   MAIN: "MAIN",
   DRINK: "DRINK",
   DESSERT: "DESSERT",
@@ -102,11 +117,3 @@ const DB = [
     price: "R$ 35,90",
   },
 ];
-
-const ORDER = {
-  MAIN: {},
-  DRINK: {},
-  DESSERT: {},
-};
-
-export { ORDER, DB, TYPES };
