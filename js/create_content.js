@@ -52,7 +52,7 @@ function createMainContent(db) {
   const sections = [];
   Object.entries(groups).forEach((entry) => {
     const [type, foods] = [entry[0], entry[1]];
-    const typeSection = createFoodSection(titles[type]);
+    const typeSection = createFoodSection(titles[type] ?? "Escolha um item");
     const foodListElement = typeSection.getElementsByClassName("food-list")[0];
     foods.forEach((e) => {
       foodListElement.appendChild(createFoodCard(e));
