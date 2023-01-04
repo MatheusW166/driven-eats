@@ -142,7 +142,8 @@ footer {
 }
 
 .alert {
-  width: min(100vw, 377px);
+  margin: 0 var(--horizontal-spacing);
+  max-width: 100%;
   background: var(--green-300);
   box-shadow: var(--shadow-4);
   color: var(--white);
@@ -175,9 +176,6 @@ footer {
   text-overflow: ellipsis;
   max-width: 0;
 }
-.alert table tr:last-child td {
-  font-weight: 700;
-}
 
 .alert table tr:not(:last-child) td {
   padding-bottom: 16px;
@@ -187,6 +185,9 @@ footer {
 }
 .alert table td:nth-child(even) {
   text-align: right;
+}
+.alert table tr:last-child td {
+  font-weight: 700;
 }
 
 .alert .actions > button {

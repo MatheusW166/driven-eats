@@ -1,25 +1,33 @@
+import { moneyToNumber } from "./utils.js";
+
 const ORDER = {
   MAIN: null,
   DRINK: null,
   DESSERT: null,
 };
 
-export function remainingNumber() {
+function remainingNumber() {
   return Object.entries(ORDER).reduce((prev, curr) => curr[1] ? prev : prev + 1, 0);
 }
 
-export function getLastFood(category) {
+function getLastFood(category) {
   if (ORDER[category]) {
     return { ...ORDER[category] };
   }
   return ORDER[category];
 }
 
-export function updateOrder(food) {
+function updateOrder(food) {
   ORDER[food.category] = { ...food };
   return food;
 }
 
-export function getOrder() {
+function getOrder() {
   return { ...ORDER };
 }
+
+function getTotalPrice() {
+  return Object.entries(ORDER).reduce((prev, curr) => moneyToNumber(curr[1].price) + prev, 0.0);
+}
+
+export { getLastFood, getOrder, updateOrder, remainingNumber, getTotalPrice };

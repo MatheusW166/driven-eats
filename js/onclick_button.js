@@ -1,25 +1,12 @@
-import { getOrder } from "./order.js";
+import { numberToMoney } from "./utils.js";
+import { getOrder, getTotalPrice } from "./order.js";
 
 const finishBtn = document.getElementById("finish-order");
-const closeOrder = document.getElementById("confirm-order");
-const cancelOrder = document.getElementById("cancel-order");
 const alertContainer = document.getElementsByClassName("container-alert")[0];
-
-function moneyToNumber(numberText) {
-  const text = numberText.split(" ")[1].replace(",", ".");
-  return parseFloat(text);
-}
-
-function numberToMoney(number) {
-  const formated = number.toFixed(2);
-  const formatedText = formated.replace(".", ",");
-  return `R$ ${formatedText}`;
-}
+const table = alertContainer.getElementsByTagName("table")[0];
 
 finishBtn.onclick = () => {
-  const table = alertContainer.getElementsByTagName("table")[0];
   const { MAIN, DRINK, DESSERT } = getOrder();
-  const total = moneyToNumber(MAIN.price) + moneyToNumber(DRINK.price) + moneyToNumber(DESSERT.price);
   table.innerHTML = `
     <tr>
       <td>${MAIN.name}</td>
@@ -35,15 +22,33 @@ finishBtn.onclick = () => {
     </tr>
     <tr>
       <td>TOTAL</td>
-      <td>${numberToMoney(total)}</td>
+      <td>${numberToMoney(getTotalPrice())}</td>
     </tr>
   `;
-
   alertContainer.style.display = "grid";
 }
 
+const cancelOrder = document.getElementById("cancel-order");
 cancelOrder.onclick = () => {
   alertContainer.style.display = "none";
 }
+
+const closeOrder = document.getElementById("confirm-order");
+closeOrder.onclick = () => {
+  const name = prompt("Qual é o seu nome?");
+  const address = prompt("Qual é o seu endereço?");
+
+  const { MAIN, DRINK, DESSERT } = getOrder();
+  const message = `
+  Olá, gostaria de fazer o pedido:
+  - Prato: ${MAIN.name}
+  - Bebida: ${DRINK.name}
+  - Sobremesa: ${DESSERT.name}
+  Total: ${numberToMoney(getTotalPrice())}
+  `;
+  const url = new URL(`https://wa.me/5564992262101?text=${message}`);
+  window.open(url, "_blank");
+  alertContainer.style.display = "none";
+};
 
 export { };

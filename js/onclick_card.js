@@ -38,7 +38,9 @@ function onclickFoodCard(event) {
   updateButton(remainingNumber());
 }
 
-export function insertOnclickCardEvents() {
+function insertOnclickCardEvents() {
   const elements = document.querySelectorAll(".food-list>article");
   elements.forEach((e) => e.onclick = onclickFoodCard);
 }
+
+export { insertOnclickCardEvents };

@@ -30,10 +30,13 @@ function createFoodCard(food) {
   const p = document.createElement("p");
   const h4 = document.createElement("h4");
   article.setAttribute("id", `${food.category}-${food.foodId}`);
+  article.setAttribute("data-test", `${food.category === TYPES.MAIN ? "dish" : food.category === TYPES.DRINK ? "drink" : "dessert"}`);
   image.src = food.img;
   h3.appendChild(document.createTextNode(food.name));
+  h3.setAttribute("data-test", "item-name");
   p.appendChild(document.createTextNode(food.description));
   h4.appendChild(document.createTextNode(food.price));
+  h4.setAttribute("data-test", "item-price");
   article.appendChild(image);
   article.appendChild(h3);
   article.appendChild(p);
@@ -62,7 +65,7 @@ function createMainContent(db) {
   return sections;
 }
 
-export function insertContent() {
+function insertContent() {
   const mainSections = createMainContent(getAllFoods());
   const fragment = document.createDocumentFragment();
   mainSections.forEach((e) => fragment.appendChild(e));
@@ -70,3 +73,5 @@ export function insertContent() {
   const main = document.getElementsByTagName("main")[0];
   main.appendChild(fragment);
 }
+
+export { insertContent };

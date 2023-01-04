@@ -26,7 +26,7 @@
     </footer>
 
     <div class="container-alert hidden">
-      <div class="alert">
+      <div data-test="confirm-order-modal" class="alert">
         <h3>Confirme seu pedido</h3>
         <div class="order">
           <table>
@@ -49,8 +49,8 @@
           </table>
         </div>
         <div class="actions">
-          <button id="confirm-order">Tudo certo, pode pedir!</button>
-          <button id="cancel-order">Cancelar</button>
+          <button data-test="confirm-order-btn" id="confirm-order">Tudo certo, pode pedir!</button>
+          <button data-test="cancel-order-btn" id="cancel-order">Cancelar</button>
         </div>
       </div>
     </div>

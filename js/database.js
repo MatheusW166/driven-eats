@@ -1,4 +1,4 @@
-export function searchByFoodId(foodId) {
+function searchByFoodId(foodId) {
   const id = parseInt(foodId);
   const element = DB.filter((e) => e.foodId === id)[0];
   if (element) {
@@ -7,13 +7,13 @@ export function searchByFoodId(foodId) {
   return element;
 }
 
-export function getAllFoods() {
+function getAllFoods() {
   const data = [];
   DB.forEach((e) => data.push({ ...e }));
   return data;
 }
 
-export const TYPES = {
+const TYPES = {
   MAIN: "MAIN",
   DRINK: "DRINK",
   DESSERT: "DESSERT",
@@ -117,3 +117,5 @@ const DB = [
     price: "R$ 35,90",
   },
 ];
+
+export { TYPES, searchByFoodId, getAllFoods };
