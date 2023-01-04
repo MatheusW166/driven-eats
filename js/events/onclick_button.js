@@ -50,14 +50,14 @@ function inputText(title, reinforceTitle) {
 }
 
 const closeOrder = document.getElementById("confirm-order");
-closeOrder.onclick = (event) => {
+closeOrder.onclick = () => {
   const name = inputText("Qual é o seu nome?", "Por favor, informe seu nome.");
   if (name === null) return;
   const address = inputText("Qual é o seu endereço?", "Endereço obrigatório, quer receber o pedido como doidão?");
   if (address === null) return;
 
   const { MAIN, DRINK, DESSERT } = getOrder();
-  const message = `Olá, gostaria de fazer o pedido:\n- Prato: ${MAIN.name}\n- Bebida: ${DRINK.name}\n- Sobremesa: ${DESSERT.name}\nTotal: ${numberToMoney(getTotalPrice())}\n\nNome: ${name}\nEndereço: ${address}`;
+  const message = `Olá, gostaria de fazer o pedido:\n- Prato: ${MAIN.name}\n- Bebida: ${DRINK.name}\n- Sobremesa: ${DESSERT.name}\nTotal: ${numberToMoney(getTotalPrice(), false)}\n\nNome: ${name}\nEndereço: ${address}`;
   const url = new URL(`https://wa.me/5564992262101?text=${encodeURIComponent(message)}`);
 
   location.href = url;

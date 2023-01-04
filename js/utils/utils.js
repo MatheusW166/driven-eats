@@ -3,9 +3,9 @@ function moneyToNumber(numberText) {
   return parseFloat(text);
 }
 
-function numberToMoney(number) {
+function numberToMoney(number, useComma = true) {
   const formated = number.toFixed(2);
-  const formatedText = formated.replace(".", ",");
+  const formatedText = (useComma) ? formated.replace(".", ",") : formated;
   return `R$ ${formatedText}`;
 }
 
