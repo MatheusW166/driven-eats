@@ -1,5 +1,5 @@
-import { searchByFoodId } from "./database.js";
-import { getLastFood, updateOrder, remainingNumber } from "./order.js";
+import { searchByFoodId } from "../db/database.js";
+import { getLastFood, updateOrder, remainingNumber } from "../db/order.js";
 
 function getTagFromFood(food) {
   return document.getElementById(`${food.category}-${food.foodId}`);

@@ -1,13 +1,9 @@
-import { numberToMoney } from "./utils.js";
-import { getOrder, getTotalPrice } from "./order.js";
+import { numberToMoney } from "../utils/utils.js";
+import { getOrder, getTotalPrice } from "../db/order.js";
 
-const finishBtn = document.getElementById("finish-order");
-const alertContainer = document.getElementsByClassName("container-alert")[0];
-const table = alertContainer.getElementsByTagName("table")[0];
-
-finishBtn.onclick = () => {
-  const { MAIN, DRINK, DESSERT } = getOrder();
-  table.innerHTML = `
+function createTableRows(order) {
+  const { MAIN, DRINK, DESSERT } = order;
+  return `
     <tr>
       <td>${MAIN.name}</td>
       <td>${MAIN.price}</td>
@@ -25,6 +21,13 @@ finishBtn.onclick = () => {
       <td>${numberToMoney(getTotalPrice())}</td>
     </tr>
   `;
+}
+
+const finishBtn = document.getElementById("finish-order");
+const alertContainer = document.getElementsByClassName("container-alert")[0];
+const table = alertContainer.getElementsByTagName("table")[0];
+finishBtn.onclick = () => {
+  table.innerHTML = createTableRows(getOrder());
   alertContainer.style.display = "grid";
 }
 

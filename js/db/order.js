@@ -1,4 +1,4 @@
-import { moneyToNumber } from "./utils.js";
+import { moneyToNumber } from "../utils/utils.js";
 
 const ORDER = {
   MAIN: null,

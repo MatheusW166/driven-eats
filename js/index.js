@@ -1,6 +1,8 @@
-import { insertContent } from "./create_content.js";
-import { insertOnclickCardEvents } from "./onclick_card.js";
-import { } from "./onclick_button.js";
+import { insertContent } from "./content/create_content.js";
+import { insertOnclickCardEvents } from "./events/onclick_card.js";
+import { } from "./events/onclick_button.js";
 
 insertContent();
 insertOnclickCardEvents();
+
+export { };

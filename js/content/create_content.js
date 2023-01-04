@@ -1,4 +1,4 @@
-import { TYPES, getAllFoods } from "./database.js";
+import { TYPES, getAllFoods } from "../db/database.js";
 
 function groupByCategory(data) {
   const groups = {};
