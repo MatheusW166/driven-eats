@@ -42,6 +42,9 @@ function createFoodCard(food) {
   article.appendChild(p);
   article.appendChild(h4);
 
+  const icon = document.createElement("ion-icon");
+  icon.setAttribute("name", "checkmark-circle");
+  h4.appendChild(icon);
   return article;
 }
 

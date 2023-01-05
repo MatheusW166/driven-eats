@@ -28,12 +28,12 @@ const alertContainer = document.getElementsByClassName("container-alert")[0];
 const table = alertContainer.getElementsByTagName("table")[0];
 finishBtn.onclick = () => {
   table.innerHTML = createTableRows(getOrder());
-  alertContainer.style.display = "grid";
+  alertContainer.classList.remove("hidden");
 }
 
 const cancelOrder = document.getElementById("cancel-order");
 cancelOrder.onclick = () => {
-  alertContainer.style.display = "none";
+  alertContainer.classList.add("hidden");
 }
 
 function inputText(title, reinforceTitle) {

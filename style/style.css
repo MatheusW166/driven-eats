@@ -43,10 +43,22 @@ main > section h2 {
   gap: 10px;
   box-shadow: var(--shadow-2);
   cursor: pointer;
+  transition: box-shadow ease 0.3s, transform ease 0.3s;
+}
+
+.food-list article:hover {
+  transform: scale(1.05);
+}
+.food-list article:active {
+  transform: scale(0.95);
 }
 
 .food-list article.selected {
   box-shadow: var(--shadow-3);
+}
+.food-list article.selected ion-icon {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .food-list article img {
@@ -77,6 +89,18 @@ main > section h2 {
   line-height: 19px;
   color: var(--black);
   margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-list h4 > ion-icon {
+  line-height: 0;
+  color: var(--green-500);
+  font-size: 16px;
+  transform: scale(0.5);
+  opacity: 0;
+  transition: transform ease 0.3s 0.1s, opacity ease 0.3s;
 }
 
 header {
@@ -89,6 +113,7 @@ header {
   gap: 6px;
   box-shadow: var(--shadow-1);
   position: fixed;
+  z-index: 1;
   width: 100%;
   top: 0;
   left: 0;
@@ -111,6 +136,7 @@ footer {
   padding: 16px 20px;
   background: var(--white);
   position: fixed;
+  z-index: 1;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -129,11 +155,21 @@ footer {
 }
 
 .container-alert.hidden {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.container-alert.hidden .alert {
+  transform: translateY(20%);
+  opacity: 0;
 }
 
 .container-alert {
+  transition: opacity ease 0.3s;
+  opacity: 1;
+  pointer-events: all;
   position: fixed;
+  z-index: 1;
   height: 100vh;
   width: 100vw;
   background-color: var(--white90);
@@ -142,6 +178,9 @@ footer {
 }
 
 .alert {
+  transition: transform ease 0.3s, opacity ease 0.3s;
+  transform: translateY(0);
+  opacity: 1;
   margin: 0 var(--horizontal-spacing);
   max-width: 100%;
   background: var(--green-300);
