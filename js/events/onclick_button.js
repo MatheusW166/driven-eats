@@ -6,15 +6,15 @@ function createTableRows(order) {
   return `
     <tr>
       <td>${MAIN.name}</td>
-      <td>${MAIN.price}</td>
+      <td>${MAIN.price.split(" ")[1]}</td>
     </tr>
     <tr>
       <td>${DRINK.name}</td>
-      <td>${DRINK.price}</td>
+      <td>${DRINK.price.split(" ")[1]}</td>
     </tr>
     <tr>
       <td>${DESSERT.name}</td>
-      <td>${DESSERT.price}</td>
+      <td>${DESSERT.price.split(" ")[1]}</td>
     </tr>
     <tr>
       <td>TOTAL</td>
