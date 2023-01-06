@@ -57,8 +57,8 @@ closeOrder.onclick = () => {
   if (address === null) return;
 
   const { MAIN, DRINK, DESSERT } = getOrder();
-  const message = `Olá, gostaria de fazer o pedido:\n- Prato: ${MAIN.name}\n- Bebida: ${DRINK.name}\n- Sobremesa: ${DESSERT.name}\nTotal: ${numberToMoney(getTotalPrice())}}\n\nNome: ${name}\nEndereço: ${address}`;
-  const url = new URL(`https://wa.me/5564992262101?text=${encodeURIComponent(message)}`);
+  const message = `Olá, gostaria de fazer o pedido:\n- Prato: ${MAIN.name}\n- Bebida: ${DRINK.name}\n- Sobremesa: ${DESSERT.name}\nTotal: R$ ${getTotalPrice().toFixed(2)})}}\n\nNome: ${name}\nEndereço: ${address}`;
+  const url = `https://wa.me/5564992262101?text=${encodeURIComponent(message)}`;
 
   location.href = url;
   alertContainer.style.display = "none";
