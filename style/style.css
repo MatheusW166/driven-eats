@@ -167,7 +167,7 @@ footer {
 
 .container-alert {
   visibility: visible;
-  transition: opacity ease 0.3s;
+  transition: opacity ease 0.3s, visibility ease 0.3s;
   opacity: 1;
   pointer-events: all;
   position: fixed;
