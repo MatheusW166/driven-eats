@@ -157,7 +157,7 @@ footer {
 .container-alert.hidden {
   opacity: 0;
   pointer-events: none;
-  display: none;
+  visibility: hidden;
 }
 
 .container-alert.hidden .alert {
@@ -166,6 +166,7 @@ footer {
 }
 
 .container-alert {
+  visibility: visible;
   transition: opacity ease 0.3s;
   opacity: 1;
   pointer-events: all;
