@@ -157,6 +157,7 @@ footer {
 .container-alert.hidden {
   opacity: 0;
   pointer-events: none;
+  display: none;
 }
 
 .container-alert.hidden .alert {

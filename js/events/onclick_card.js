@@ -9,7 +9,7 @@ function updateButton(remains) {
   const finishBtn = document.getElementById("finish-order");
   if (remains === 0) {
     finishBtn.removeAttribute("disabled");
-    finishBtn.innerHTML = "Finalizar pedido";
+    finishBtn.innerHTML = "Fechar pedido";
     return;
   }
   if (remains > 1) {
