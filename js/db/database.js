@@ -26,7 +26,7 @@ const DB = [
     name: "Cheddar Burger",
     description: "Hambúrguer angus grelhado",
     img: "https://detroitsteakhouse.com.br/cardapio-digital/wp-content/uploads/2021/01/Cheddar-Burger.png",
-    price: "R$ 45,90",
+    price: "R$ 45",
   },
   {
     foodId: 2,
@@ -58,7 +58,7 @@ const DB = [
     name: "Soda Italiana",
     description: "Água com gás e frutas vermelhas",
     img: "https://cooknenjoy.com/wp-content/uploads/2022/02/soda-italiana-2-1800x1352-1200x901.jpg",
-    price: "R$ 19,90",
+    price: "R$ 19",
   },
   {
     foodId: 6,
@@ -90,7 +90,7 @@ const DB = [
     name: "Churros com doce de leite & sorvete",
     description: "Churros com doce de leite e sorvete",
     img: "https://detroitsteakhouse.com.br/cardapio-digital/wp-content/uploads/2021/01/Copy-of-Churros-com-sorvete-e-doce-de-leite-min-scaled.jpg",
-    price: "R$ 25,90",
+    price: "R$ 25",
   },
   {
     foodId: 10,
