@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoodsMenu</title>
+    <link rel="shortcut icon" href="img/hamburguer.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/root.css" />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Driven Eats</title>
-  <link rel="stylesheet" href="style/reset.css">
-  <link rel="stylesheet" href="style/root.css">
-  <link rel="stylesheet" href="style/style.css">
-</head>
+  <body>
+    <div id="root">
+      <header>
+        <h1>FoodsMenu</h1>
+        <p>Sua comida em 6 minutos</p>
+      </header>
 
-<body>
-  <div id="root">
-    <header>
-      <h1>DrivenEats</h1>
-      <p>Sua comida em 6 minutos</p>
-    </header>
+      <main></main>
 
-    <main>
-    </main>
+      <footer>
+        <button data-test="order-btn" id="finish-order" disabled>
+          Selecione os 3 itens <br />para fechar o pedido
+        </button>
+      </footer>
 
-    <footer>
-      <button data-test="order-btn" id="finish-order" disabled>Selecione os 3 itens <br>para fechar o pedido</button>
-    </footer>
-
-    <div class="container-alert hidden">
-      <div data-test="confirm-order-modal" class="alert">
-        <h3>Confirme seu pedido</h3>
-        <div class="order">
-          <table>
-            <tr>
-              <td>Comida_1</td>
-              <td>R$ 10,00</td>
-            </tr>
-            <tr>
-              <td>Comida_1</td>
-              <td>R$ 25,00</td>
-            </tr>
-            <tr>
-              <td>Comida_1</td>
-              <td>R$ 50,00</td>
-            </tr>
-            <tr>
-              <td>TOTAL</td>
-              <td>R$ 100,00</td>
-            </tr>
-          </table>
-        </div>
-        <div class="actions">
-          <button data-test="confirm-order-btn" id="confirm-order">Tudo certo, pode pedir!</button>
-          <button data-test="cancel-order-btn" id="cancel-order">Cancelar</button>
+      <div class="container-alert hidden">
+        <div data-test="confirm-order-modal" class="alert">
+          <h3>Confirme seu pedido</h3>
+          <div class="order">
+            <table>
+              <tr>
+                <td>Comida_1</td>
+                <td>R$ 10,00</td>
+              </tr>
+              <tr>
+                <td>Comida_1</td>
+                <td>R$ 25,00</td>
+              </tr>
+              <tr>
+                <td>Comida_1</td>
+                <td>R$ 50,00</td>
+              </tr>
+              <tr>
+                <td>TOTAL</td>
+                <td>R$ 100,00</td>
+              </tr>
+            </table>
+          </div>
+          <div class="actions">
+            <button data-test="confirm-order-btn" id="confirm-order">
+              Tudo certo, pode pedir!
+            </button>
+            <button data-test="cancel-order-btn" id="cancel-order">
+              Cancelar
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <script type="module" src="./js/index.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
-
+    <script type="module" src="./js/index.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
