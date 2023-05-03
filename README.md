@@ -13,7 +13,7 @@ Aplicação disponível no link a seguir:
 </div>
 
 <span id="about">
-Projeto criado como parte de avaliação no curso full stack da <a href="https://www.driven.com.br/">Driven</a>. A aplicação consiste em um cardápio online, onde o usuário deve escolher 1 item de cada categoria, e, então, confirmar o pedido. Ao confirmar, o usuário deve informar seu nome e endereço para que o pedido seja encaminhado ao restaurante via Whatsapp.
+A aplicação consiste em um cardápio online, onde o usuário deve escolher 1 item de cada categoria, e, então, confirmar o pedido. Ao confirmar, o usuário deve informar seu nome e endereço para que o pedido seja encaminhado ao restaurante via Whatsapp.
 </span>
 
 ## <span id="tech">💻 Tecnologias</span>
